@@ -1,0 +1,29 @@
+@mixin partLayout($direction: row, $background: $darkColor, $textColor: $lightColor)  {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+  background-color: $background;
+  color: $textColor;
+}
+
+.header {
+  @include partLayout(column, $darkColor, $lightColor);
+  &__title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  &__button {
+    background-color: $mediumColor;
+    color: $lightColor;
+    &:hover{
+      background-color: $lightColor;
+      color: $darkColor;
+    }
+    &::after {
+      content: "Hellooooo";
+    }
+  }
+}

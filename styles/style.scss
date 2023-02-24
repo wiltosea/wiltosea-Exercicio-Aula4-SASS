@@ -1,0 +1,19 @@
+@import "./variables";
+@import "./header";
+
+.contactForm {
+  @extend .header;
+  @include partLayout(column-reverse, $lightColor, $mediumColor);
+  // background-color: tomato;
+  &__button {
+    background-color: $mediumColor;
+    color: $lightColor;
+    &:hover{
+      background-color: $darkColor;
+      color: $lightColor;
+    }
+    &::after {
+      content: " ";
+    }
+  }
+}
