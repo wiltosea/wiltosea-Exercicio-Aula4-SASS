@@ -3,7 +3,7 @@
 
 .contactForm {
   @extend .header;
-  @include partLayout(column-reverse, $lightColor, $mediumColor);
+  @include partLayout(column-reverse,false);
   // background-color: tomato;
   &__button {
     background-color: $mediumColor;

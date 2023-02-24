@@ -1,15 +1,20 @@
-@mixin partLayout($direction: row, $background: $darkColor, $textColor: $lightColor)  {
+@mixin partLayout($direction: row, $themeDark: true)  {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: $direction;
-  background-color: $background;
-  color: $textColor;
+  @if $themeDark {
+    background-color: $darkColor;
+    color: $lightColor;
+  } @else {
+    background-color: $lightColor;
+    color: $darkColor;
+  }
 }
 
 .header {
-  @include partLayout(column, $darkColor, $lightColor);
+  @include partLayout(column, true );
   &__title {
     font-size: 3rem;
     font-weight: 700;
